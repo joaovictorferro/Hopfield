@@ -1,3 +1,8 @@
+#Equipe:
+# Arthur Savio
+# Guilherme Amaral
+# João Victor Ribeiro
+# problema: Caixeiro Viajante
 import numpy as np
 
 entrada=[[0,7,5,3,1],
@@ -39,16 +44,11 @@ def convergir_primeira_cidade():
             soma = 0.0
             if i not in coluna_visitada:
                 soma = entrada[valor][i] * peso[i][5] + 0.0000001
-                # print("I " + str(i))
-                # print("ENTRADA: " + str(entrada[valor][i]))
-                # print("SOMA " + str(soma))
             for j in range(5):
                 if j not in coluna_visitada:
                     soma = soma + saidaA[j] * peso[i][j]
             if i not in coluna_visitada:
                 saidaB[i] = soma
-        # print(saidaB)
-        # print(max(saidaB))
 
         while True:
             valor = np.random.randint(0,5)
@@ -60,8 +60,6 @@ def convergir_primeira_cidade():
             if k not in coluna_visitada:
                 if saidaB[k] > saidaB[valor]:
                     valor = k
-                    #print(valor)
-        #print(valor)
         coluna_visitada.append(valor)
         print(coluna_visitada)
         if len(coluna_visitada) == 5:
@@ -73,7 +71,6 @@ def printSaidaA():
 
 if __name__ == '__main__':
     inicializarPeso()
-    #print(peso)
     while True:
         convergir_primeira_cidade()
         c = 0
@@ -86,7 +83,6 @@ if __name__ == '__main__':
                 saidaA[j] = saidaB[j]
             coluna_visitada.clear()
             coluna_visitada.append(0)
-            #print(coluna_visitada)
         else:
             flag = True;
 
