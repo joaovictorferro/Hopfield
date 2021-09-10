@@ -3,6 +3,8 @@
 # Guilherme Amaral
 # João Victor Ribeiro
 # problema: Caixeiro Viajante
+#Rede Neural: Hopfield
+
 import numpy as np
 
 entrada=[[0,7,5,3,1],
